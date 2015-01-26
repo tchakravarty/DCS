@@ -1,6 +1,16 @@
 DCS
 ===
+This package provides functionality to estimate models of the Dynamic Conditional Score [DCS] class, proposed by Harvey & Chakravarty (2008, 2009), and by Creal, Koopman & Lucas (2013), simultaneously, and independently as Generalized Autoregressive Score [GAS] models. A comprehensive introduction to the theory of these models is given in Harvey (2013).
 
+The models of the DCS class in the current version of the package include:  
+* Gaussian copula GAS models (Creal, Koopman & Lucas, 2013);  
+* Marked point process GAS models (Creal, Koopman & Lucas, 2013);  
+* Beta-t-GARCH DCS models (Harvey & Chakravarty, 2008);  
+* Beta-t-EGARCH DCS models (Harvey & Chakravarty, 2008);  
+* GAS volatility models (Creal, Koopman & Lucas, 2013);  
+
+TVQ (NOT_IMPLEMENTED)
+===
 This package provides functions to compute time-varying quantiles [TVQs] and expectiles [TVEs] as in the work of Andrew Harvey and co-authors. 
 Time-varying quantiles and time-varying expectiles capture the notion that features of the distribution other than the mean and the variance (GARCH and stochastic volatility models) can be dynamic, and as such, are parsilmoniously modeled using state space models.
 

@@ -6,59 +6,32 @@
 
 using namespace Rcpp;
 
-// rcpparma_hello_world
-arma::mat rcpparma_hello_world();
-RcppExport SEXP DCS_rcpparma_hello_world() {
+// fnRestrictedParams
+arma::vec fnRestrictedParams(arma::vec vParams);
+RcppExport SEXP DCS_fnRestrictedParams(SEXP vParamsSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        arma::mat __result = rcpparma_hello_world();
+        Rcpp::traits::input_parameter< arma::vec >::type vParams(vParamsSEXP );
+        arma::vec __result = fnRestrictedParams(vParams);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);
     return __sexp_result;
 END_RCPP
 }
-// rcpparma_outerproduct
-arma::mat rcpparma_outerproduct(const arma::colvec& x);
-RcppExport SEXP DCS_rcpparma_outerproduct(SEXP xSEXP) {
+// fnGASGaussianCopulaLikelihoodCpp
+double fnGASGaussianCopulaLikelihoodCpp(arma::vec vParams, int iT, arma::mat mData);
+RcppExport SEXP DCS_fnGASGaussianCopulaLikelihoodCpp(SEXP vParamsSEXP, SEXP iTSEXP, SEXP mDataSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP );
-        arma::mat __result = rcpparma_outerproduct(x);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
-END_RCPP
-}
-// rcpparma_innerproduct
-double rcpparma_innerproduct(const arma::colvec& x);
-RcppExport SEXP DCS_rcpparma_innerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP );
-        double __result = rcpparma_innerproduct(x);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
-END_RCPP
-}
-// rcpparma_bothproducts
-Rcpp::List rcpparma_bothproducts(const arma::colvec& x);
-RcppExport SEXP DCS_rcpparma_bothproducts(SEXP xSEXP) {
-BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP );
-        Rcpp::List __result = rcpparma_bothproducts(x);
+        Rcpp::traits::input_parameter< arma::vec >::type vParams(vParamsSEXP );
+        Rcpp::traits::input_parameter< int >::type iT(iTSEXP );
+        Rcpp::traits::input_parameter< arma::mat >::type mData(mDataSEXP );
+        double __result = fnGASGaussianCopulaLikelihoodCpp(vParams, iT, mData);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);
