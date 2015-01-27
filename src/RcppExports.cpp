@@ -6,24 +6,24 @@
 
 using namespace Rcpp;
 
-// fnRestrictedParams
-arma::vec fnRestrictedParams(arma::vec vParams);
-RcppExport SEXP DCS_fnRestrictedParams(SEXP vParamsSEXP) {
+// gas_gc_restrictParams
+arma::vec gas_gc_restrictParams(arma::vec vParams);
+RcppExport SEXP DCS_gas_gc_restrictParams(SEXP vParamsSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
         Rcpp::traits::input_parameter< arma::vec >::type vParams(vParamsSEXP );
-        arma::vec __result = fnRestrictedParams(vParams);
+        arma::vec __result = gas_gc_restrictParams(vParams);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);
     return __sexp_result;
 END_RCPP
 }
-// fnGASGaussianCopulaLikelihoodCpp
-double fnGASGaussianCopulaLikelihoodCpp(arma::vec vParams, int iT, arma::mat mData);
-RcppExport SEXP DCS_fnGASGaussianCopulaLikelihoodCpp(SEXP vParamsSEXP, SEXP iTSEXP, SEXP mDataSEXP) {
+// gas_gc_llCpp
+double gas_gc_llCpp(arma::vec vParams, int iT, arma::mat mData);
+RcppExport SEXP DCS_gas_gc_llCpp(SEXP vParamsSEXP, SEXP iTSEXP, SEXP mDataSEXP) {
 BEGIN_RCPP
     SEXP __sexp_result;
     {
@@ -31,7 +31,7 @@ BEGIN_RCPP
         Rcpp::traits::input_parameter< arma::vec >::type vParams(vParamsSEXP );
         Rcpp::traits::input_parameter< int >::type iT(iTSEXP );
         Rcpp::traits::input_parameter< arma::mat >::type mData(mDataSEXP );
-        double __result = fnGASGaussianCopulaLikelihoodCpp(vParams, iT, mData);
+        double __result = gas_gc_llCpp(vParams, iT, mData);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
     UNPROTECT(1);

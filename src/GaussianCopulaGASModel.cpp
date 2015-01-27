@@ -4,17 +4,22 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-arma::vec fnRestrictedParams(arma::vec vParams) {
+arma::vec gas_gc_restrictParams(arma::vec vParams) {
   arma::vec vRestrictedParams = vParams;
   vRestrictedParams[1] = exp(vParams[1]);
   vRestrictedParams[2] = exp(vParams[2])/(1 + exp(vParams[2]));
   return(vRestrictedParams);
 }
 
+//' Log-likelihood of the GAS Gaussian copula model
+//' 
+//' Returns the scaled negative log-likelihood of the GAS Gaussian copula model for a given
+//' set of parameters and data matrix
+//' @export
 // [[Rcpp::export]]
-double fnGASGaussianCopulaLikelihoodCpp(arma::vec vParams, int iT, arma::mat mData) {
+double gas_gc_llCpp(arma::vec vParams, int iT, arma::mat mData) {
   double dLL = 0;  // initialize the likelihood at zero
-  arma::vec vRestrictedParams = fnRestrictedParams(vParams);
+  arma::vec vRestrictedParams = gas_gc_restrictParams(vParams);
   double dOmega = vRestrictedParams[0];
   double dA = vRestrictedParams[1];
   double dB = vRestrictedParams[2];

@@ -14,11 +14,11 @@
 
 # read in the data
 dfCKL = read.csv("Data/Patton4filtered.csv")
-mData = dfCKL[, 2:3]
+mData = as.matrix(dfCKL[, 2:3])
 iT = nrow(mData)
 
 # check the likelihood for a given parameter combination
-fnGASGaussianCopulaLikelihoodCpp(c(0.005, -5, 5.0), iT, as.matrix(mData))
+fnGASGaussianCopulaLikelihoodCpp(c(0.005, -5, 5.0), iT, mData)
 
 # compute the parameters of the Gauassian copula GAS models
 optimGASGC = GaussianCopulaGAS(c(0.005, -5, 5.0), mData = as.matrix(mData))
