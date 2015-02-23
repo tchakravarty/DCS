@@ -9,7 +9,6 @@ gas_gc_restrictParams <- function(vParams) {
 #' 
 #' Returns the scaled negative log-likelihood of the GAS Gaussian copula model for a given
 #' set of parameters and data matrix
-#' @export
 gas_gc_llCpp <- function(vParams, iT, mData) {
     .Call('DCS_gas_gc_llCpp', PACKAGE = 'DCS', vParams, iT, mData)
 }

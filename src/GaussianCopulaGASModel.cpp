@@ -15,7 +15,6 @@ arma::vec gas_gc_restrictParams(arma::vec vParams) {
 //' 
 //' Returns the scaled negative log-likelihood of the GAS Gaussian copula model for a given
 //' set of parameters and data matrix
-//' @export
 // [[Rcpp::export]]
 double gas_gc_llCpp(arma::vec vParams, int iT, arma::mat mData) {
   double dLL = 0;  // initialize the likelihood at zero

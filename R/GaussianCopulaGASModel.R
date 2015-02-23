@@ -1,3 +1,4 @@
+#' @export
 fnRestrictedParams = function(vParams) {
   vRestrictedParams = vParams
   vRestrictedParams[2] = exp(vParams[2])
@@ -39,6 +40,7 @@ fnGASGaussianCopulaLikelihood = function(vParams, iT, mData) {
 }
 
 # function to accept the inputs and provide all the outputs
+#' @export
 GaussianCopulaGAS = function(mData, vParam, ...) {
   optimGaussCopGAS = optim(par = c(0.005, -5, 5.0), 
                            fn = gas_gc_llCpp, mData = mData, iT = nrow(mData), 
