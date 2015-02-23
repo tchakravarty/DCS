@@ -1,1 +1,2 @@
 #' @useDynLib DCS
+NULL

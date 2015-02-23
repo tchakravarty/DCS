@@ -1,7 +1,14 @@
 Development Notes:
 =====
-*Last updated: 26th January 2015*
-
+*Last updated: 23rd February 2015*
+23rd February 2015
+------------------
+* Pesky issue with `useDynLib` not being recognized by `roxygen2`. Need to add a `NULL` to the end of the package file to get it to do this. 
+* The `CrealKoopmanLucas2013.R` example file should now work.
+* Remove the `R` version of the Gaussian GAS copula model.
+* Remove the `R` version of the function for estimating restricted values of the parameters.
+* 
+ 
 26th January 2015
 ----
 * Create the function that optimizes the GAS Gaussian copula model as in Creal, Koopman & Lucas (2013).

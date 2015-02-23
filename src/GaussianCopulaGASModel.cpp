@@ -3,6 +3,7 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 using namespace Rcpp;
 
+//' @export
 // [[Rcpp::export]]
 arma::vec gas_gc_restrictParams(arma::vec vParams) {
   arma::vec vRestrictedParams = vParams;
